@@ -13,7 +13,7 @@
         }
 
         header {
-            background-color: #333;
+            background-color: #3e4356;
             color: #b21414;
             padding: 20px;
             text-align: center;
@@ -25,7 +25,6 @@
         }
 
         nav ul {
-            list-style-type: none;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -38,7 +37,7 @@
 
         nav ul li a {
             color: #fff;
-            text-decoration: none;
+            font-style: italic ;
             padding: 5px 10px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
@@ -51,17 +50,30 @@
         section {
             padding: 20px;
             margin: 20px;
-            background-color: #fff;
+            background-color:#d8d9e1;
         }
 
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #343030;
+            color: #fb6508;
             padding: 10px;
             text-align: center;
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        .login-register {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-register a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #b21414;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -83,10 +95,15 @@
 <section>
     <h2>Welcome to our ecommerce website!</h2>
     <p> Your welcome customers.</p>
+
+    <div class="login-register">
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+    </div>
 </section>
 
 <footer>
-    <p>Location Makerere University.</p>
+    <p>Location Makerere University. Email. group21@gmail.com</p>
 </footer>
 
 </body>
