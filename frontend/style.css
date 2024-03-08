@@ -1,14 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    padding: 10px;
+    background-image:url('shopping.jpg');
 }
 
 header {
     background-color: #3e4356;
     color: #b21414;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -40,8 +40,8 @@ nav ul li a:hover {
     background-color: #555;
 }
 section {
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 100px;
     background-color:#d8d9e1;
 }
 
@@ -53,6 +53,9 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+.login-register a:hover{
+    background-color: #6f6b6b;
 }
 .login-register {
     text-align: center;
