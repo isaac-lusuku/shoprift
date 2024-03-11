@@ -32,13 +32,10 @@ class MyUserManager(BaseUserManager):
         return user
 
 
-
+# i created a custom user class to overide the defualt one and extend auth functionality
 class MyUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, blank=False)
     username = models.CharField(max_length=30, blank=False)
-    date_joined = models.DateTimeField(auto_now_add=True)
-    is_active = models.BooleanField(default=True)
-    avatar = models.ImageField(null=True, blank=True)
     password = models.CharField(max_length=150, blank=False)
 
 
@@ -65,3 +62,14 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
         '''
         send_mail(subject, message, from_email, [self.email], **kwargs)
 """
+
+# additional information for the userprofile
+class UserProfile(models.Model):
+    user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    avatar = models.ImageField(blank=True, null=True)
+    phone = models.CharField(max_length=15, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self) -> str:
+        return self.user.username
