@@ -75,12 +75,3 @@ class UserProfile(models.Model):
         return self.user.username
     
 
-    # class UserProfile(models.Model):
-    # user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
-    # avatar = models.ImageField(blank=True, null=True)
-    # phone = models.CharField(max_length=15, blank=True, null=True)
-    # is_active = models.BooleanField(default=True)
-    # date_joined = models.DateTimeField(auto_now_add=True, null=True)
-
-    # def __str__(self) -> str:
-    #     return self.user.username
