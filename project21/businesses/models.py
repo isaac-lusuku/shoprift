@@ -1,5 +1,6 @@
 from django.db import models
 from main_info.models import MyUser
+import datetime
 
 # These are the models to handle all the data about businesses
 
@@ -12,6 +13,11 @@ class Business(models.Model):
     city = models.CharField(max_length= 20, blank= False)
     contact = models.IntegerField(blank = False)
     email = models.TextField(max_length= 35, blank=True, null=True)
+    logo = models.ImageField(upload_to="images/", null=True)
+    open_time = models.DateTimeField(default = datetime.time(8, 0))
+    close_time = models.DateTimeField(default = datetime.time(5, 0))
+
+    # is you still have time you can add the business intro video
 
     def __str__(self) -> str:
         return self.name

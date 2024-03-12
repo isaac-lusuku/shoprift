@@ -131,4 +131,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# main authentication
 AUTH_USER_MODEL = "main_info.MyUser"
+ 
+
+# media configurations ----->>>remember to configure it before deployment
+MEDIA_ROOT = "C:/Users/Administrator/Desktop/group21/project21/media"
