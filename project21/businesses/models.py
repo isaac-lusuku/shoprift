@@ -14,8 +14,8 @@ class Business(models.Model):
     contact = models.IntegerField(blank = False)
     email = models.TextField(max_length= 35, blank=True, null=True)
     logo = models.ImageField(upload_to="images/", null=True)
-    open_time = models.DateTimeField(default = datetime.time(8, 0))
-    close_time = models.DateTimeField(default = datetime.time(5, 0))
+    # open_time = models.DateTimeField(default = datetime.time(8, 0))
+    # close_time = models.DateTimeField(default = datetime.time(5, 0))
 
     # is you still have time you can add the business intro video
 
@@ -36,7 +36,7 @@ class Selling_Business(models.Model):
 # this model is to handle businesses that offer a service to the customers
 class Service_Business(models.Model):
     business_details = models.OneToOneField(Business, blank= False, null= False, on_delete= models.CASCADE)
-    service = models.TextField(max_length= 25, blank= False, null = False)
+    category = models.TextField(max_length= 25, blank= False, null = False)
     appointment_options = models.BooleanField(default=True)
     customer = models.ManyToManyField(MyUser, blank=True)
 
