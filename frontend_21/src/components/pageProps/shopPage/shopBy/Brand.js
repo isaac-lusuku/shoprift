@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import NavTitle from "./NavTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleBrand } from "../../../../redux/orebiSlice";
+import { toggleBrand } from "../../../../redux/mainSlice";
 
 const Brand = () => {
   const [showBrands, setShowBrands] = useState(true);

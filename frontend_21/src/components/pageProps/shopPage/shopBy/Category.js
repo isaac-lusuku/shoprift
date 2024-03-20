@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ImPlus } from "react-icons/im";
 import NavTitle from "./NavTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCategory } from "../../../../redux/orebiSlice";
+import { toggleCategory } from "../../../../redux/mainSlice";
 
 const Category = () => {
   const [showSubCatOne, setShowSubCatOne] = useState(false);

@@ -8,7 +8,7 @@ const initialState = {
   checkedCategorys: [],
 };
 
-export const mainSlice = createSlice({
+export const Slice = createSlice({
   name: "main",
   initialState,
   reducers: {
@@ -96,5 +96,5 @@ export const {
   resetCart,
   toggleBrand,
   toggleCategory,
-} = main.actions;
-export default main.reducer;
+} = mainSlice.actions;
+export default mainSlice.reducer;

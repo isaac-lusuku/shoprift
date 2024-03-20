@@ -1,12 +1,11 @@
 import React from "react";
-import { CgAdd } from "react-icons/cg";
-import { CgRedo } from "react-icons/cg";
+
 
 const BannerBottom = () => {
   return (
     <div className="w-full bg-white border-b-[1px] py-4 border-b-gray-200 px-4">
-      <div className="max-w-container mx-auto h-20 flex flex-col md:flex-row justify-between items-center">
-        <div className="flex items-center gap-2 w-72 shadow-sm hover:shadow-md duration-300">
+      <div className="w-10/12 mx-auto h-20 flex flex-col md:flex-row justify-between items-center">
+        <div className="flex items-center justify-center gap-4 w-72 shadow-sm hover:shadow-md duration-300">
           <span className="font-bold font-titleFont w-6 text-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,9 +37,9 @@ const BannerBottom = () => {
               </g>
             </svg>
           </span>
-          <p className="text-lightText text-base">Two years warranty</p>
+          <p className="text-lightText text-base">24-hour support</p>
         </div>
-        <div className="flex md:w-auto items-center gap-2 w-72 shadow-sm hover:shadow-md duration-300">
+        <div className="flex items-center justify-center gap-4 w-72 shadow-sm hover:shadow-md duration-300">
           <span className="text-5xl text-center w-10 ml-1 text-orange-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -52,14 +51,11 @@ const BannerBottom = () => {
               ></path>
             </svg>
           </span>
-          <p className="text-xl text-lightText text-base">
-            Free shipping <br />{" "}
-            <span className="text-xs text-lightText text-base">
-              Free Shipping World Wide
-            </span>
+          <p className="text-lightText text-base">
+            First month free shipping
           </p>
         </div>
-        <div className="flex md:w-auto items-center gap-2 w-72 shadow-sm hover:shadow-md duration-300">
+        <div className="flex items-center justify-center gap-4 w-72 shadow-sm hover:shadow-md duration-300">
           <span className="text-2xl  text-center w-10">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +87,7 @@ const BannerBottom = () => {
               ></path>
             </svg>
           </span>
-          <p className="text-lightText text-base">Return policy in 30 days</p>
+          <p className="text-lightText text-base">Get notified on new arrivals</p>
         </div>
       </div>
     </div>

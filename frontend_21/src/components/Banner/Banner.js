@@ -1,181 +1,115 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import {
-  bannerImgOne,
-  bannerImgTwo,
-  bannerImgThree,
-} from "../../assets/images";
 import Image from "../designLayouts/Image";
 
 const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
+<div
+  style={{
+    position: "relative",
+    backgroundImage: `url(${imgSrc})`, 
+    display: "flex",
+    justifyContent: "center",
+    alignItems:"center",
+    height: "500px",
+    textAlign: "center",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    width: "92vw",
+    margin: "0 auto",
+    borderRadius: "30px",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  {/* Opaque overlay */}
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0, 0, 0, 0.4)", 
+      borderRadius: "30px",
+    }}
+  />
+  
+  {/* Content */}
   <div
     style={{
       position: "relative",
-      backgroundColor: "#F5F5F3", // Gray background color
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center", // Center vertically
+      width: "40vw",
+      zIndex: 1, 
+      color: "white",
     }}
   >
-    <div
+    <h1
       style={{
-        maxWidth: "450px", // Adjust the maxWidth as needed
-        marginRight: "100px", // Add margin between text/button and image
+        marginBottom: "15px",
+        fontSize: "2.5rem",
+        fontWeight: "700",
       }}
     >
-      <h1
-        style={{
-          marginBottom: "15px",
-          fontSize: "2.5rem", // Adjust the font size as needed
-          color: "#000", // Black color
-          fontWeight: "700",
-        }}
-      >
-        {text}
-      </h1>
-      <p
-        style={{
-          marginBottom: "25px",
-          fontSize: "1.5rem", // Adjust the font size as needed
-          color: "#666", // Gray color
-        }}
-      >
-        {Subtext}
-      </p>
+      {text}
+    </h1>
+    <p
+      style={{
+        marginBottom: "25px",
+        fontSize: "1.5rem", 
+      }}
+    >
+      {Subtext}
+    </p>
 
-      <Link to="/about">
-        <button className="bg-primeColor text-white text-lg font-bodyFont w-[185px] h-[50px] hover:bg-black duration-300 font-bold">
-          {buttonText}
-        </button>
-      </Link>
-    </div>
-    <div style={{ marginLeft: "100px" }}>
-      <Image imgSrc={imgSrc} />
-    </div>
+    <Link to= "/contact">
+      <button className="bg-[#EE4266] text-white text-lg font-bodyFont w-[185px] h-[50px] rounded-md hover:bg-black duration-300 font-bold">
+        {buttonText}
+      </button>
+    </Link>
   </div>
+</div>
+
 );
 
 const Banner = () => {
-  const [dotActive, setDocActive] = useState(0);
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
     arrows: false,
-    beforeChange: (prev, next) => {
-      setDocActive(next);
-    },
-    appendDots: (dots) => (
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "7%",
-          transform: "translateY(-50%)",
-        }}
-      >
-        <ul style={{ margin: "0px" }}> {dots} </ul>
-      </div>
-    ),
-    customPaging: (i) => (
-      <div
-        style={
-          i === dotActive
-            ? {
-                width: "30px",
-                color: "#262626",
-                borderRight: "3px #262626 solid",
-                padding: "8px 0",
-                cursor: "pointer",
-              }
-            : {
-                width: "30px",
-                color: "transparent",
-                borderRight: "3px white solid",
-                padding: "8px 0",
-                cursor: "pointer",
-              }
-        }
-      >
-        0{i + 1}
-      </div>
-    ),
-    responsive: [
-      {
-        breakpoint: 576,
-        settings: {
-          dots: true,
-          appendDots: (dots) => (
-            <div
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "2%",
-                transform: "translateY(-50%)",
-              }}
-            >
-              <ul style={{ margin: "0px" }}> {dots} </ul>
-            </div>
-          ),
-          customPaging: (i) => (
-            <div
-              style={
-                i === dotActive
-                  ? {
-                      width: "25px",
-                      color: "#262626",
-                      borderRight: "3px #262626 solid",
-                      cursor: "pointer",
-                      fontSize: "12px",
-                    }
-                  : {
-                      width: "25px",
-                      color: "transparent",
-                      borderRight: "3px white solid",
-                      cursor: "pointer",
-                      fontSize: "12px",
-                    }
-              }
-            >
-              0{i + 1}
-            </div>
-          ),
-        },
-      },
-    ],
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
   };
 
   const slides = [
     {
-      imgSrc: bannerImgOne,
-      text: "Enhance Your Printing Experience",
+      imgSrc: "https://img.freepik.com/fotos-gratis/ainda-vida-de-homem-casual-acessorios-masculinos-modernos-em-preto_155003-1726.jpg?size=626&ext=jpg&ga=GA1.2.1808718460.1710860225&semt=ais",
+      text: "Enhance Your Shopping Experience",
       Subtext:
-        "Explore our premium printers and consumables for exceptional results",
-      buttonLink: "/offer",
+        "Explore the world of endless accessibility, dream of it, we have it ",
+      buttonLink: "/shop",
       buttonText: "Shop Now",
     },
     {
-      imgSrc: bannerImgOne,
-      text: "Quality Printing Solutions",
+      imgSrc: "https://img.freepik.com/fotos-gratis/loja-de-roupas-loja-de-roupas-em-cabide-na-boutique-loja-moderna_1150-8886.jpg?t=st=1710876465~exp=1710880065~hmac=6d06f41708001106bc88eb8775ab0d99f48ce1635fb2064c41c7cb5bde801c4c&w=2000",
+      text: "Quality Solutions You Everyday Needs",
       Subtext:
-        "Discover our wide range of printers and consumables designed for professional printing needs.",
+        "Discover our wide range of electrons and consumables designed for consumer needs.",
       buttonLink: "/shop",
       buttonText: "About-us",
     },
     {
-      imgSrc: bannerImgOne,
+      imgSrc: "https://img.freepik.com/fotos-gratis/design-de-interiores-minimalista_23-2150870800.jpg?t=st=1710877596~exp=1710881196~hmac=65441728d75e3526802a53fb1b6301a5a62d5fe0c970de5689a6c48534d3e746&w=2000",
       text: "Efficiency Redefined",
       Subtext:
-        "Maximize productivity with our advanced printers and high-quality consumables. ",
+        "Maximize productivity with high-quality consumables. ",
       buttonLink: "/contact",
       buttonText: "Contact-us",
     },
 
-    // Add more slides as needed
   ];
   return (
     <div className="w-full bg-white">
