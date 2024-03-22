@@ -7,6 +7,7 @@ import Sale from "../../components/home/Sale/Sale";
 import SpecialOffers from "../../components/home/SpecialOffers/SpecialOffers";
 import YearProduct from "../../components/home/YearProduct/YearProduct";
 import PopularCategories from "../../components/home/PopularCategories/PopularCategories";
+import StartSelling from "../../components/home/StartSelling/StartSelling";
 
 const Home = () => {
   return (
@@ -15,11 +16,12 @@ const Home = () => {
       <BannerBottom />
       <PopularCategories />
       <div className="max-w-container mx-auto px-4">
-        <Sale />
-        <NewArrivals />
         <BestSellers />
+        <NewArrivals />
         <YearProduct />
+        <Sale />
         <SpecialOffers />
+        <StartSelling />
       </div>
     </div>
   );

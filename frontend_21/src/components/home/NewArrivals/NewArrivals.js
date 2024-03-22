@@ -2,23 +2,37 @@ import React from "react";
 import Slider from "react-slick";
 import Heading from "../Products/Heading";
 import Product from "../Products/Product";
-import {
-  newArrOne,
-  newArrTwo,
-  newArrThree,
-  newArrFour,
-} from "../../../assets/images/index";
 import SampleNextArrow from "./SampleNextArrow";
 import SamplePrevArrow from "./SamplePrevArrow";
+import { SampleData } from "../../../constants";
+
+const  shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; 
+  }
+  return array;
+}
+
+const catData = shuffleArray(SampleData)
 
 const NewArrivals = () => {
   const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
+    className: "center",
+    centerMode: true,
+    centerPadding: "60px",
+    speed: 2000,
+    autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    adaptiveHeight: false,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1025,
@@ -49,62 +63,23 @@ const NewArrivals = () => {
   return (
     <div className="w-full pb-16">
       <Heading heading="New Arrivals" />
-      <Slider {...settings}>
-        <div className="px-2">
-          <Product
-            _id="100001"
-            img={newArrOne}
-            productName="Round Table Clock"
-            price="44.00"
-            color="Black"
+      <Slider {...settings} >
+      {catData.map((data) => (
+        <div className="px-2 pb-2">
+        <Product 
+            key={data._id}
+            _id={data._id}
+            img={data.img}
+            productName={data.productName}
+            price={data.price}
+            color={data.color}
             badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+            des={data.des} 
+            className="p-0"
           />
         </div>
-        <div className="px-2">
-          <Product
-            _id="100002"
-            img={newArrTwo}
-            productName="Smart Watch"
-            price="250.00"
-            color="Black"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100003"
-            img={newArrThree}
-            productName="cloth Basket"
-            price="80.00"
-            color="Mixed"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100004"
-            img={newArrFour}
-            productName="Funny toys for babies"
-            price="60.00"
-            color="Mixed"
-            badge={false}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100005"
-            img={newArrTwo}
-            productName="Funny toys for babies"
-            price="60.00"
-            color="Mixed"
-            badge={false}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
+
+        ))}
       </Slider>
     </div>
   );

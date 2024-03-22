@@ -34,75 +34,62 @@ const Product = (props) => {
     console.log(wishList);
   };
   return (
-    <div className="w-full relative group">
-      <div className="max-w-80 max-h-80 relative overflow-y-hidden ">
-        <div onClick={handleProductDetails}>
-          <Image className="w-full h-full" imgSrc={props.img} />
+    <div className="w-full relative group rounded-2xl border-b-[2px] hover:shadow-lg">
+        <div className="w-full h-80 relative overflow-y-hidden rounded-2xl border-b-[1px]"> 
+            <Image className="w-full h-full" imgSrc={props.img} />
+          <div className="absolute top-6 left-6">
+            {props.badge && <Badge text="New" />}
+          </div>
+          <div
+                onClick={handleWishList}
+                className=" absolute top-6 right-6 bg-primeColor h-[35px] w-[35px] text-white flex items-center justify-center rounded-full"
+              >
+                  <BsSuitHeartFill />
+            </div>
+          <div className="w-full h-12 absolute bg-white -bottom-[130px] group-hover:bottom-0 duration-700">
+            <div className="w-full h-full flex items-end justify-center  font-titleFont px-2 ">
+              <div
+                onClick={handleProductDetails}
+                className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
+              >
+                View Details
+                <span className="text-lg">
+                  <MdOutlineLabelImportant />
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="absolute top-6 left-8">
-          {props.badge && <Badge text="New" />}
+        <div className="max-w-80 py-6 flex flex-col gap-1 px-4">
+          <div className="flex items-center justify-between font-titleFont">
+            <h2 className="text-lg text-primeColor font-bold group-hover:underline duration-700">
+              {props.productName}
+            </h2>
+            <p className="text-[#767676] text-[14px] group-hover:text-themeColor font-semibold duration-700">UGX{props.price}</p>
+          </div>
+          <div className="flex justify-between items-center">
+            <p className="text-[#767676] text-[14px]">{props.color}</p>
+            <div
+                onClick={() =>
+                  dispatch(
+                    addToCart({
+                      _id: props._id,
+                      name: props.productName,
+                      quantity: 1,
+                      image: props.img,
+                      badge: props.badge,
+                      price: props.price,
+                      colors: props.color,
+                    })
+                  )
+                }
+                className="text-[#767676] flex "
+              >
+                <FaShoppingCart className="text-2xl text-black -translate-x-12 opacity-0 group-hover:translate-x-3 transition-transform duration-700 group-hover:opacity-100"/>
+                <FaShoppingCart className="text-2xl -translate-x-3 group-hover:translate-x-4 transition-transform duration-0 group-hover:opacity-0"/>
+              </div>
+          </div>
         </div>
-        <div className="w-full h-32 absolute bg-white -bottom-[130px] group-hover:bottom-0 duration-700">
-          <ul className="w-full h-full flex flex-col items-end justify-center gap-2 font-titleFont px-2 border-l border-r">
-            <li className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
-              Compare
-              <span>
-                <GiReturnArrow />
-              </span>
-            </li>
-            <li
-              onClick={() =>
-                dispatch(
-                  addToCart({
-                    _id: props._id,
-                    name: props.productName,
-                    quantity: 1,
-                    image: props.img,
-                    badge: props.badge,
-                    price: props.price,
-                    colors: props.color,
-                  })
-                )
-              }
-              className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
-            >
-              Add to Cart
-              <span>
-                <FaShoppingCart />
-              </span>
-            </li>
-            <li
-              onClick={handleProductDetails}
-              className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
-            >
-              View Details
-              <span className="text-lg">
-                <MdOutlineLabelImportant />
-              </span>
-            </li>
-            <li
-              onClick={handleWishList}
-              className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
-            >
-              Add to Wish List
-              <span>
-                <BsSuitHeartFill />
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="max-w-80 py-6 flex flex-col gap-1 border-[1px] border-t-0 px-4">
-        <div className="flex items-center justify-between font-titleFont">
-          <h2 className="text-lg text-primeColor font-bold">
-            {props.productName}
-          </h2>
-          <p className="text-[#767676] text-[14px]">${props.price}</p>
-        </div>
-        <div>
-          <p className="text-[#767676] text-[14px]">{props.color}</p>
-        </div>
-      </div>
     </div>
   );
 };

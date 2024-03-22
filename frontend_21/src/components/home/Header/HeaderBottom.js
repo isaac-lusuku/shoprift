@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import Flex from "../../designLayouts/Flex";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { paginationItems } from "../../../constants";
+import { SampleData } from "../../../constants";
 import { IoRocket } from "react-icons/io5";
 import  SpecialCase  from "../../SpecialCase/SpecialCase";
 
@@ -32,7 +32,7 @@ const HeaderBottom = () => {
   };
 
   useEffect(() => {
-    const filtered = paginationItems.filter((item) =>
+    const filtered = SampleData.filter((item) =>
       item.productName.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredProducts(filtered);

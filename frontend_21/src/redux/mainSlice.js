@@ -8,7 +8,7 @@ const initialState = {
   checkedCategorys: [],
 };
 
-export const Slice = createSlice({
+export const mainSlice = createSlice({
   name: "main",
   initialState,
   reducers: {

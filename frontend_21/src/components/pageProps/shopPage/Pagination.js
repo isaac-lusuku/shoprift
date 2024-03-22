@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 import Product from "../../home/Products/Product";
 import { useSelector } from "react-redux";
-import { paginationItems } from "../../../constants";
+import { SampleData } from "../../../constants";
 
-const items = paginationItems;
+const items = SampleData;
 
 function Items({ currentItems, selectedBrands, selectedCategories }) {
   // Filter items based on selected brands and categories
@@ -32,8 +32,6 @@ function Items({ currentItems, selectedBrands, selectedCategories }) {
             color={item.color}
             badge={item.badge}
             des={item.des}
-            pdf={item.pdf}
-            ficheTech={item.ficheTech}
           />
         </div>
       ))}

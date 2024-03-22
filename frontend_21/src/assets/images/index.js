@@ -7,7 +7,7 @@ import saleImgOne from "./sale/saleImgOne.webp";
 import saleImgTwo from "./sale/saleImgTwo.webp";
 import saleImgThree from "./sale/saleImgThree.webp";
 // ============== Products Start here ====================
-import pdf1 from "../pdf/pdf1.pdf";
+
 // New Arrivals
 import newArrOne from "./products/newArrival/newArrOne.webp";
 import newArrTwo from "./products/newArrival/newArrTwo.webp";
@@ -128,7 +128,7 @@ export {
   // ===================== Products End here ==============
   paymentCard,
   emptyCart,
-  pdf1,
+
 
   // imprimante pantum
   IMPRIMANTE_PANTUM_CP2200DW,

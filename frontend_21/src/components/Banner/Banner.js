@@ -94,7 +94,7 @@ const Banner = () => {
       buttonText: "Shop Now",
     },
     {
-      imgSrc: "https://img.freepik.com/fotos-gratis/loja-de-roupas-loja-de-roupas-em-cabide-na-boutique-loja-moderna_1150-8886.jpg?t=st=1710876465~exp=1710880065~hmac=6d06f41708001106bc88eb8775ab0d99f48ce1635fb2064c41c7cb5bde801c4c&w=2000",
+      imgSrc: "https://img.freepik.com/fotos-gratis/organizacao-de-diferentes-elementos-de-viagem_23-2148884921.jpg?t=st=1710920065~exp=1710923665~hmac=b6971682a1512e3cc5c3b2ef77a4552b53e5033dceedd3205f614756311a686d&w=1800",
       text: "Quality Solutions You Everyday Needs",
       Subtext:
         "Discover our wide range of electrons and consumables designed for consumer needs.",
