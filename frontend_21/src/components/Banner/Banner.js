@@ -86,14 +86,6 @@ const Banner = () => {
 
   const slides = [
     {
-      imgSrc: "https://img.freepik.com/fotos-gratis/ainda-vida-de-homem-casual-acessorios-masculinos-modernos-em-preto_155003-1726.jpg?size=626&ext=jpg&ga=GA1.2.1808718460.1710860225&semt=ais",
-      text: "Enhance Your Shopping Experience",
-      Subtext:
-        "Explore the world of endless accessibility, dream of it, we have it ",
-      buttonLink: "/shop",
-      buttonText: "Shop Now",
-    },
-    {
       imgSrc: "https://img.freepik.com/fotos-gratis/organizacao-de-diferentes-elementos-de-viagem_23-2148884921.jpg?t=st=1710920065~exp=1710923665~hmac=b6971682a1512e3cc5c3b2ef77a4552b53e5033dceedd3205f614756311a686d&w=1800",
       text: "Quality Solutions You Everyday Needs",
       Subtext:
@@ -101,6 +93,15 @@ const Banner = () => {
       buttonLink: "/shop",
       buttonText: "About-us",
     },
+    {
+      imgSrc: "https://img.freepik.com/fotos-gratis/ainda-vida-de-homem-casual-acessorios-masculinos-modernos-em-preto_155003-1726.jpg?size=626&ext=jpg&ga=GA1.2.1808718460.1710860225&semt=ais",
+      text: "Enhance Your Shopping Experience",
+      Subtext:
+        "Explore the world of endless accessibility, dream of it, we have it ",
+      buttonLink: "/shop",
+      buttonText: "Shop Now",
+    },
+
     {
       imgSrc: "https://img.freepik.com/fotos-gratis/design-de-interiores-minimalista_23-2150870800.jpg?t=st=1710877596~exp=1710881196~hmac=65441728d75e3526802a53fb1b6301a5a62d5fe0c970de5689a6c48534d3e746&w=2000",
       text: "Efficiency Redefined",
