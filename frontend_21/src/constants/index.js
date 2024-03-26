@@ -119,7 +119,7 @@ export const SampleData = [
   {
     _id: "204",
     img: "https://img.freepik.com/fotos-gratis/carro-3d-na-cidade-vibrante-a-noite_23-2150796972.jpg?t=st=1711093942~exp=1711097542~hmac=4d5c5e553456f1f47a6e2752bcc34eb0c4f4d71c95a38e18f339435a5b8ad9e1&w=1380",
-    productName: "Benaz",
+    productName: "Benz",
     price: "150000000",
     color: "Black",
     badge: false,

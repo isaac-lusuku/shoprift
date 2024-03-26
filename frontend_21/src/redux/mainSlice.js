@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 const initialState = {
   userInfo: [],
   products: [],
-  checkedBrands: [],
   checkedCategorys: [],
 };
 
@@ -56,21 +55,6 @@ export const mainSlice = createSlice({
       // Dispatch a success toast
     },
 
-    toggleBrand: (state, action) => {
-      const brand = action.payload;
-      const isBrandChecked = state.checkedBrands.some(
-        (b) => b._id === brand._id
-      );
-
-      if (isBrandChecked) {
-        state.checkedBrands = state.checkedBrands.filter(
-          (b) => b._id !== brand._id
-        );
-      } else {
-        state.checkedBrands.push(brand);
-      }
-    },
-
     toggleCategory: (state, action) => {
       const category = action.payload;
       const isCategoryChecked = state.checkedCategorys.some(
@@ -94,7 +78,6 @@ export const {
   drecreaseQuantity,
   deleteItem,
   resetCart,
-  toggleBrand,
   toggleCategory,
 } = mainSlice.actions;
 export default mainSlice.reducer;
