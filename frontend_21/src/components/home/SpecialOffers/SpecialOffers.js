@@ -76,7 +76,7 @@ const SpecialOffers = () => {
             productName={data.productName}
             price={data.price}
             color={data.color}
-            badge={true}
+            badge={data.badge}
             des={data.des} 
             className="p-0"
           />

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { logo } from "../../../assets/images";
 import Image from "../../designLayouts/Image";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
+import {emptyCart} from "../../../assets/images/index"
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
@@ -30,7 +30,7 @@ const Header = () => {
         <Flex className="flex items-center justify-between h-full">
           <Link to="/">
             <div>
-              <Image className="w-32 object-cover" imgSrc={logo} />
+              <Image className="w-32 object-cover" imgSrc={emptyCart} />
             </div>
           </Link>
           <div>

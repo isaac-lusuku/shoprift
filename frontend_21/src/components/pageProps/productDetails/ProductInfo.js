@@ -33,7 +33,7 @@ const ProductInfo = ({ productInfo }) => {
       <hr />
       <p className="text-base text-gray-600">{renderDescription()}</p>
 
-      <p className="text-base text-green-600 font-medium">En Stock</p>
+      <p className="text-base text-green-600 font-medium">In Stock</p>
       <p className="font-medium text-lg">
         <span className="font-normal">Colors:</span> {productInfo.color}
       </p>
@@ -56,8 +56,7 @@ const ProductInfo = ({ productInfo }) => {
         Add to Cart
       </button>
       <p className="font-normal text-sm">
-        <span className="text-base font-medium"> Categories:</span> Spring
-        collection, Streetwear, Women Tags: featured SKU: N/A
+        <span className="text-base font-medium"> Categories:</span> {productInfo.colors}
       </p>
     </div>
   );
